@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Continue</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.box{
+  text-align:center;
+  background:#020617;
+  padding:30px;
+  border-radius:14px;
+  width:90%;
+  max-width:360px;
+}
+button{
+  width:100%;
+  padding:16px;
+  font-size:18px;
+  border:none;
+  border-radius:10px;
+  background:#2563eb;
+  color:#fff;
+  cursor:pointer;
+}
+button:hover{background:#1d4ed8;}
+.small{
+  margin-top:12px;
+  font-size:12px;
+  opacity:.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <button onclick="go()">Continue</button>
+  <div class="small">If nothing opens, please use external browser</div>
+</div>
+
+<script>
+function go(){
+  // open Adsterra link
+  window.open(
+    "https://www.effectivegatecpm.com/e8dh5jri?key=f820c25ec8cff39e4c212571be74709e",
+    "_blank"
+  );
+
+  // send user to step 2
+  window.location.href = "continue.html";
+}
+</script>
+
+</body>
+</html>
