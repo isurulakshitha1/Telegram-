@@ -35,10 +35,16 @@ button{
   cursor:pointer;
 }
 button:hover{background:#1d4ed8;}
+
+.browser-btn{
+  display:none;
+  margin-top:12px;
+  background:#16a34a;
+}
 .small{
   margin-top:12px;
   font-size:12px;
-  opacity:.6;
+  opacity:.7;
 }
 </style>
 </head>
@@ -47,18 +53,34 @@ button:hover{background:#1d4ed8;}
 
 <div class="box">
   <button onclick="go()">Continue</button>
-  <div class="small">If nothing opens, please use external browser</div>
+
+  <!-- Open in browser button -->
+  <button class="browser-btn" id="browserBtn" onclick="openBrowser()">
+    Open in Browser
+  </button>
+
+  <div class="small" id="hint"></div>
 </div>
 
 <script>
+const ua = navigator.userAgent.toLowerCase();
+const isTelegram = ua.includes("telegram");
+
+if(isTelegram){
+  document.getElementById("browserBtn").style.display = "block";
+  document.getElementById("hint").innerText =
+    "For best access, open this page in your browser.";
+}
+
+function openBrowser(){
+  window.location.href = window.location.href;
+}
+
 function go(){
-  // open Adsterra link
   window.open(
     "https://www.effectivegatecpm.com/e8dh5jri?key=f820c25ec8cff39e4c212571be74709e",
     "_blank"
   );
-
-  // send user to step 2
   window.location.href = "continue.html";
 }
 </script>
